@@ -87,7 +87,12 @@
 				
 					// Connect to database
 					static $db_connection;
-					$db_connection = mysqli_connect('localhost', $config['username'], $config['password'], $config['database']);
+					
+					define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+					define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
+					$host = DB_HOST . ":" . DB_PORT;
+					
+					$db_connection = mysqli_connect($host, $config['username'], $config['password'], $config['database']);
 				
 					if($db_connection === false) { return mysqli_connect_error(); }
 					
