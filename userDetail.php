@@ -1,48 +1,23 @@
 		<?php		
-		
+			include 'databaseHandler.php';
+
+			//pickup userID from post call
 			$q = $_POST["userID"];
 
-			$connection = db_connect();
-			$query = "SELECT * FROM users WHERE userID = $q";
-			$result = mysqli_query($connection, $query);
+			//Query the database for user with matching ID
+			$result = db_query("SELECT * FROM users WHERE userID = $q");
 			$row = mysqli_fetch_array($result);
 
-			   class User {
-			  public $userID = "";
-			  public $name = "";
-			  public $address  = "";
-			  public $phone = "";
-			  public $notes = "";
-		   }
-
-		   $e = new User();
-		   $e->userID = $row[0];
-		   $e->name = $row[1] . " " . $row[2];
-		   $e->address  = $row[3] . ", " . $row[4] . ", " . $row[5];
-		   $e->phone = $row[6];
-		   $e->notes = $row[7];
-
-		   echo json_encode($e);
-
-			//	----- FUNCTIONS ----- 	//
+			//Format the query result into an array
+			$userInfo['userID'] = $row[0];
+			$userInfo['name'] = $row[1] . " " . $row[2];
+			$userInfo['street']  = $row[3];
+			$userInfo['city']  = $row[4];
+			$userInfo['state']  = $row[5];
+			$userInfo['phone'] = $row[6];
+			$userInfo['notes'] = $row[7];		   
+		   
+			//encode array json
+			echo json_encode($userInfo);
 			
-			//**************************************************************//
-			// Name: db_connect()											//
-			// Parms: none													//
-			// Description: Initialized a connection to the database		//
-			//**************************************************************//
-				function db_connect() {
-					
-					//Load database configuration
-					$config = parse_ini_file('config.ini');
-				
-					// Connect to database
-					static $db_connection;
-					$db_connection = mysqli_connect('localhost', $config['username'], $config['password'], $config['database']);
-				
-					if($db_connection === false) { return mysqli_connect_error(); }
-					
-					Return $db_connection;
-				}
-
 		?> 

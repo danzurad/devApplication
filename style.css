@@ -4,3 +4,109 @@ table, th, td{
 		padding: 5px;
 		border-collapse: collapse;
 		}
+		
+
+h3 {
+	margin: 5px;
+}
+
+p {
+	line-height: 30%;
+	text-indent: 10px;
+}
+
+
+.evenRow {
+	background-color: #e0e0eb;
+}
+
+#div_mainView {
+	width: 480px;
+	background-color: #e6e6ff;
+    text-align: center;
+	padding: 5px 0px 5px 0px;
+	border: 1px solid black;
+}
+
+
+#div_tableView {
+    text-align: center;
+	padding: 50px 0px 50px 0px;
+}
+
+#div_usersTable {
+	display: inline-block;
+	margin: auto;
+	background-color: white;
+}
+
+#div_pageTabs {
+	text-align: right;
+	padding: 2px 2px 0px 0px;
+	background-color: #e6e6ff;
+}
+
+  
+#div_userDetails {
+    display: none;
+}
+
+#div_userHeader {
+	border: 1px solid black;
+	width: 480px;
+	height: 35px;
+	background-color: #ffe6b3;
+}
+
+#p_leftHeader {
+	float: left;
+}
+
+#p_rightHeader {
+	float: right;
+}
+
+#lbl_userID {
+	text-align: right;
+	padding: 0px 5px 0px 0px;
+}
+	
+#div_userInfo {
+	border: 1px solid black;
+	height: 240px;
+	width: 480px;
+	background-color: #cce6ff;
+}
+	
+#div_address {
+    height: 200px;
+    width: 240px;
+	float : left;
+	margin: 16px 0px 0px 0px;
+	}
+
+#div_contact {
+    height: 200px;
+    width: 240px;
+	float : left;
+	margin: 16px 0px 0px 0px;
+	}
+
+#div_notes {
+	height: 120px;
+    width: 240px;
+	margin: 32px 0px 0px -1px;
+	}
+	
+
+#txt_notes {
+	margin: -10px 0px 0px 0px;
+    resize: none;
+	width: 220px;
+}
+
+#verticalLine {
+    border-left: thick solid #ff0000;
+	width: 6px;
+	height: 180px;
+}
